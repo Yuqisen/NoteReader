@@ -1,5 +1,5 @@
-const SERVER_URL_DEFAULT = 'http://reader.yyt.ln.cn';
-// const SERVER_URL_DEFAULT = 'http://localhost:7000';
+const SERVER_URL_DEFAULT = 'http://reader.yyt.ln.cn/s';
+// const SERVER_URL_DEFAULT = 'http://localhost:8080';
 
 /**
  * 发送网络GET请求.
