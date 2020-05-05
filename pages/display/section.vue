@@ -83,6 +83,9 @@ export default {
 		this.loadModal = true;
 		this.note.id = option.noteId;
 		this.note.name = option.title;
+		uni.showLoading({
+		    title: '加载中...'
+		});
 		service.requestGet(
 			'/note/getSection/' + option.id,
 			{},
@@ -99,9 +102,11 @@ export default {
 				this.note.afterTitle = successRes.data.afterName;
 				this.title = successRes.data.sectionDetail.title;
 				this.content = successRes.data.sectionDetail.content;
+				uni.hideLoading();
 				this.loadModal = false;
 			},
 			failRes => {
+				uni.hideLoading();
 				this.loadModal = false;
 			}
 		);

@@ -35,9 +35,14 @@ export default {
 	},
 	methods: {
 		gotoDetail(item) {
-			uni.navigateTo({
-				url:"/pages/display/section-list?id=" + item.id +"&name=" + item.name
-			})
+			// uni.navigateTo({
+			// 	url:"/pages/display/section-list?id=" + item.id +"&name=" + item.name
+			// })
+			if (item.lastSectionId != 0) {
+				uni.navigateTo({
+					url:"/pages/display/section?id=" + item.lastSectionId +"&title=" + item.name + "&noteId=" + item.id
+				})
+			}
 		}
 	}
 }

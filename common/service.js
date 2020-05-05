@@ -12,7 +12,8 @@ const requestGet = function(url, data, success, fail) {
 		url: SERVER_URL_DEFAULT + url,
 		method: 'GET',
 		header: {
-			'Content-Type': 'application/json'
+			'Content-Type': 'application/json',
+			'IMEI': uni.getStorageSync('ANDROID_APP_IMEI')
 		},
 		data: data,
 		success: success,
@@ -32,7 +33,8 @@ const requestPost = function(url, data, success, fail, failFilter = true) {
 		url: SERVER_URL_DEFAULT + url,
 		method: 'POST',
 		header: {
-			'Content-Type': 'application/json'
+			'Content-Type': 'application/json',
+			'IMEI': uni.getStorageSync('ANDROID_APP_IMEI')
 		},
 		data: data,
 		success: success,

@@ -3,23 +3,10 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
-var imei = null;
-// #ifdef APP-PLUS
-plus.device.getInfo({
-  success: function(e) {
-    imei = e.uuid;
-  },
-  fail: function(e) {
-    imei = 'UNKONW_ANDROID';
-  }
-});
-// #endif
-
 const store = new Vuex.Store({
 	state: {
 		displayType: Boolean(uni.getStorageSync('displayType') | false),
-		fontSize: Number(uni.getStorageSync('fontSize') | 20),
-		imei: imei
+		fontSize: Number(uni.getStorageSync('fontSize') | 20)
 	},
 	mutations: {
 		changeDisplayType(state, displayType) {
